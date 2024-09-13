@@ -29,7 +29,9 @@ nav ul li a {
 }
 
 .language-selector {
-    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 }
 
 .language-selector label {
@@ -42,6 +44,11 @@ nav ul li a {
     padding: 5px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+}
+
+.language-selector option {
+    font-size: 16px;
 }
 
 .hero {
