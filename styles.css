@@ -1,121 +1,114 @@
-* {
+/* Stile per l'header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
+nav ul li {
+    margin: 0 10px;
 }
 
-header {
-    background-color: #ff5733;
-    padding: 20px;
-    text-align: center;
-    color: white;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+}
+
+.language-selector {
+    position: relative;
+}
+
+.language-selector label {
+    margin-right: 10px;
+}
+
+.language-selector select {
+    background: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .hero {
     background-image: url('https://static.turisanda.it/dam/turisanda.it/destinazioni/asia/corea/wide/corea_1900_720.jpg');
     background-size: cover;
     background-position: center;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #fff;
+    padding: 50px 20px;
     text-align: center;
-    color: white;
 }
 
-.hero-text {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    display: inline-block;
-}
-
-form label, form input, form select {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-form input, form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.hero-text h2 {
+    margin: 0;
 }
 
 .btn {
-    padding: 10px 20px;
-    background-color: #ff5733;
-    color: white;
+    background-color: #f05a28;
     border: none;
-    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .offers {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #ffefd5;
+    padding: 20px;
 }
 
 .offer-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .offer {
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 30%;
 }
 
 .offer img {
-    max-width: 100%;
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.offer h3 {
+    margin: 10px 0;
+}
+
+.offer span {
+    font-weight: bold;
 }
 
 footer {
-    background-color: #ff5733;
+    background-color: #333;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 10px 0;
 }
 
-footer .social a {
-    color: white;
+.social a {
+    color: #fff;
     margin: 0 10px;
     text-decoration: none;
 }
