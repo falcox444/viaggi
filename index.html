@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prenota voli, hotel e pacchetti viaggio con facilità">
+    <title>TravelNow - Prenota il Tuo Viaggio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>TravelNow</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#bookings">Prenotazioni</a></li>
+                <li><a href="#offers">Offerte</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h2>Scopri il Mondo con Noi</h2>
+            <p>Prenota voli, hotel o pacchetti completi in un unico posto</p>
+        </div>
+        <form id="search-form">
+            <label for="booking-type">Tipo di prenotazione:</label>
+            <select id="booking-type" name="booking-type">
+                <option value="flight">Solo Volo</option>
+                <option value="hotel">Solo Hotel</option>
+                <option value="flight-hotel">Volo + Hotel</option>
+            </select>
+
+            <label for="destination">Destinazione:</label>
+            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione">
+
+            <label for="check-in">Check-in:</label>
+            <input type="date" id="check-in" name="check-in">
+
+            <label for="check-out">Check-out:</label>
+            <input type="date" id="check-out" name="check-out">
+
+            <button type="submit" class="btn">Cerca</button>
+        </form>
+    </section>
+
+    <section id="offers" class="offers">
+        <h2>Offerte in Evidenza</h2>
+        <div class="offer-container">
+            <div class="offer">
+                <img src="https://www.bgviaggi.com/images/Giappone_principal.jpg" alt="Offerta Vacanza al Mare">
+                <h3>Vacanza in Giappone</h3>
+                <p>Goditi una vacanza da sogno con alloggio e volo inclusi.</p>
+                <span>€3300</span>
+            </div>
+            <div class="offer">
+                <img src="https://www.viaggiamo.it/wp-content/uploads/2019/08/capitali-europee-da-vedere-in-2-giorni.jpg.webp" alt="Tour delle Capitali Europee">
+                <h3>Tour Capitali Europee</h3>
+                <p>Visita le capitali più iconiche d'Europa con voli e hotel inclusi.</p>
+                <span>€1400</span>
+            </div>
+            <div class="offer">
+                <img src="https://www.sposimagazine.it/wp-content/uploads/2024/03/viaggio-di-nozze-stati-uniti-new-york-cover.jpg" alt="Escursioni Montagna">
+                <h3>Tour nel nord America - Stati Uniti</h3>
+                <p>Scopri il fascino delle Alpi con un pacchetto completo.</p>
+                <span>€3000</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>
