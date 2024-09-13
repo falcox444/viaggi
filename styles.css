@@ -1,47 +1,121 @@
-.language-selector {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header {
+    background-color: #ff5733;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background-image: url('https://static.turisanda.it/dam/turisanda.it/destinazioni/asia/corea/wide/corea_1900_720.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    display: inline-block;
 }
 
-.language-selector select {
-    padding: 5px;
+form label, form input, form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input, form select {
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 20px 15px; /* Dimensioni dell'immagine della bandiera */
 }
 
-.language-selector option {
-    padding-left: 30px; /* Spazio per la bandiera */
+.btn {
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.language-selector option[value="it"] {
-    background-image: url('https://flagcdn.com/w20/it.png');
+.offers {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffefd5;
 }
 
-.language-selector option[value="en"] {
-    background-image: url('https://flagcdn.com/w20/gb.png');
+.offer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.language-selector option[value="es"] {
-    background-image: url('https://flagcdn.com/w20/es.png');
+.offer {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
 
-.language-selector option[value="ko"] {
-    background-image: url('https://flagcdn.com/w20/kr.png');
+.offer img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
-.language-selector option[value="ja"] {
-    background-image: url('https://flagcdn.com/w20/jp.png');
+footer {
+    background-color: #ff5733;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-.language-selector option[value="zh"] {
-    background-image: url('https://flagcdn.com/w20/cn.png');
-}
-
-.language-selector option[value="de"] {
-    background-image: url('https://flagcdn.com/w20/de.png');
-}
-
-.language-selector option[value="nl"] {
-    background-image: url('https://flagcdn.com/w20/nl.png');
+footer .social a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
 }
