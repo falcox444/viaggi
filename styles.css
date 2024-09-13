@@ -1,121 +1,47 @@
-/* Stile per l'header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-}
-
-.logo h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
 .language-selector {
-    position: relative;
-}
-
-.language-selector label {
-    margin-right: 10px;
-    color: #fff;
+    margin-top: 20px;
 }
 
 .language-selector select {
-    background: #fff;
-    border: none;
     padding: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KICA8cGF0aCBkPSJNMTAsMEwgMTAsMTAgTDAsMTAgTDAsMCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZS1jYXI9InJvdW5kIiBzdHJva2UtbGluZS1wYXR0ZXJuPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtY29sb3I9IiNGRkYiLz4KPC9zdmc+');
+    border-radius: 5px;
+}
+
+.language-selector option {
+    padding-left: 25px; /* Spazio per la bandiera */
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: left center;
+    background-size: 20px 20px; /* Dimensioni dell'immagine della bandiera */
 }
 
-.hero {
-    background-image: url('https://static.turisanda.it/dam/turisanda.it/destinazioni/asia/corea/wide/corea_1900_720.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 50px 20px;
-    text-align: center;
+.language-selector option[value="it"] {
+    background-image: url('https://www.countryflags.io/it/shiny/32.png');
 }
 
-.hero-text h2 {
-    margin: 0;
+.language-selector option[value="en"] {
+    background-image: url('https://www.countryflags.io/gb/shiny/32.png');
 }
 
-.btn {
-    background-color: #f05a28;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 5px;
+.language-selector option[value="es"] {
+    background-image: url('https://www.countryflags.io/es/shiny/32.png');
 }
 
-/* Offerte section */
-.offers {
-    padding: 20px;
+.language-selector option[value="ko"] {
+    background-image: url('https://www.countryflags.io/kr/shiny/32.png');
 }
 
-.offer-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.language-selector option[value="ja"] {
+    background-image: url('https://www.countryflags.io/jp/shiny/32.png');
 }
 
-.offer {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    width: 30%;
+.language-selector option[value="zh"] {
+    background-image: url('https://www.countryflags.io/cn/shiny/32.png');
 }
 
-.offer img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 10px;
+.language-selector option[value="de"] {
+    background-image: url('https://www.countryflags.io/de/shiny/32.png');
 }
 
-.offer h3 {
-    margin: 10px 0;
-}
-
-.offer span {
-    font-weight: bold;
-}
-
-/* Footer section */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.social a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
+.language-selector option[value="nl"] {
+    background-image: url('https://www.countryflags.io/nl/shiny/32.png');
 }
