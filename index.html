@@ -97,6 +97,29 @@
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const checkInInput = document.getElementById('check-in');
+            const checkOutInput = document.getElementById('check-out');
+
+            function validateDates() {
+                const today = new Date().toISOString().split('T')[0];
+                const checkInDate = checkInInput.value;
+                const checkOutDate = checkOutInput.value;
+
+                if (checkInDate && checkInDate < today) {
+                    alert('La data di andata non può essere precedente a quella odierna.');
+                    checkInInput.value = '';
+                }
+
+                if (checkInDate && checkOutDate && checkOutDate < checkInDate) {
+                    alert('La data di ritorno deve essere uguale o successiva alla data di andata.');
+                    checkOutInput.value = '';
+                }
+            }
+
+            checkInInput.addEventListener('change', validateDates);
+            checkOutInput.addEventListener('change', validateDates);
+
+            // Traduzioni per ogni lingua
             const translations = {
                 "it": {
                     "home": "Home",
@@ -146,9 +169,9 @@
                     "search": "Search",
                     "offers-title": "Featured Offers",
                     "japan-vacation": "Vacation in Japan",
-                    "japan-description": "Enjoy a dream vacation with accommodation and flights included.",
+                    "japan-description": "Enjoy a dream vacation with accommodation and flight included.",
                     "european-capitals-tour": "European Capitals Tour",
-                    "european-capitals-description": "Visit Europe's most iconic capitals with flights and hotels included.",
+                    "european-capitals-description": "Visit the most iconic capitals of Europe with flights and hotels included.",
                     "north-america-tour": "North America Tour - USA",
                     "north-america-description": "Discover the charm of the Alps with a complete package.",
                     "facebook": "Facebook",
@@ -169,16 +192,16 @@
                     "hotel": "Solo Hotel",
                     "flight-hotel": "Vuelo + Hotel",
                     "destination": "Destino:",
-                    "destination-placeholder": "Ingresa el destino",
-                    "check-in": "Check-in:",
-                    "check-out": "Check-out:",
+                    "destination-placeholder": "Introduce el destino",
+                    "check-in": "Entrada:",
+                    "check-out": "Salida:",
                     "search": "Buscar",
                     "offers-title": "Ofertas Destacadas",
                     "japan-vacation": "Vacaciones en Japón",
                     "japan-description": "Disfruta de unas vacaciones de ensueño con alojamiento y vuelo incluidos.",
-                    "european-capitals-tour": "Tour por las Capitales Europeas",
+                    "european-capitals-tour": "Tour Capitales Europeas",
                     "european-capitals-description": "Visita las capitales más icónicas de Europa con vuelos y hoteles incluidos.",
-                    "north-america-tour": "Tour por América del Norte - EE.UU.",
+                    "north-america-tour": "Tour por América del Norte - EE. UU.",
                     "north-america-description": "Descubre el encanto de los Alpes con un paquete completo.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
@@ -332,56 +355,14 @@
                 }
             };
 
-            const languageSelector = document.getElementById('language');
-            const translateElements = document.querySelectorAll('[data-translate]');
-
-            function translatePage(language) {
-                translateElements.forEach(el => {
+            document.getElementById('language').addEventListener('change', function(event) {
+                const selectedLang = event.target.value;
+                const elementsToTranslate = document.querySelectorAll('[data-translate]');
+                
+                elementsToTranslate.forEach(function(el) {
                     const key = el.getAttribute('data-translate');
-                    el.textContent = translations[language][key] || el.textContent;
+                    el.innerText = translations[selectedLang][key] || key;
                 });
-            }
-
-            languageSelector.addEventListener('change', function() {
-                const selectedLanguage = this.value;
-                translatePage(selectedLanguage);
-            });
-
-            translatePage(languageSelector.value); // Traduci con la lingua predefinita all'apertura della pagina
-
-            const form = document.getElementById('search-form');
-            const checkInInput = document.getElementById('check-in');
-            const checkOutInput = document.getElementById('check-out');
-
-            form.addEventListener('submit', function(event) {
-                const oggi = new Date();
-                const dataOdierna = oggi.toISOString().split('T')[0]; // Ottieni la data odierna in formato YYYY-MM-DD
-
-                const dataAndata = new Date(checkInInput.value);
-                const dataRitorno = new Date(checkOutInput.value);
-
-                let valid = true;
-                let messaggioErrore = '';
-
-                if (checkInInput.value < dataOdierna) {
-                    valid = false;
-                    messaggioErrore += 'La data di andata non può essere inferiore a quella odierna.\n';
-                }
-
-                if (checkOutInput.value < dataOdierna) {
-                    valid = false;
-                    messaggioErrore += 'La data di ritorno deve essere uguale o successiva a quella odierna.\n';
-                }
-
-                if (dataAndata > dataRitorno) {
-                    valid = false;
-                    messaggioErrore += 'La data di ritorno deve essere successiva o uguale alla data di andata.\n';
-                }
-
-                if (!valid) {
-                    alert(messaggioErrore);
-                    event.preventDefault(); // Previene l'invio del modulo
-                }
             });
         });
     </script>
