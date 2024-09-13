@@ -64,23 +64,23 @@
     <section id="offers" class="offers">
         <h2 data-translate="offers-title">Offerte in Evidenza</h2>
         <div class="offer-container">
-            <div class="offer">
+            <div class="offer" data-price-eur="3300" data-price-usd="3500" data-price-gbp="2700" data-price-krw="4620000" data-price-cny="24000" data-price-jpy="450000">
                 <img src="https://www.bgviaggi.com/images/Giappone_principal.jpg" alt="Offerta Vacanza al Mare">
                 <h3 data-translate="japan-vacation">Vacanza in Giappone</h3>
                 <p data-translate="japan-description">Goditi una vacanza da sogno con alloggio e volo inclusi.</p>
-                <span>€3300</span>
+                <span class="price" data-price-eur="3300">€3300</span>
             </div>
-            <div class="offer">
+            <div class="offer" data-price-eur="1400" data-price-usd="1500" data-price-gbp="1150" data-price-krw="1890000" data-price-cny="9800" data-price-jpy="180000">
                 <img src="https://www.viaggiamo.it/wp-content/uploads/2019/08/capitali-europee-da-vedere-in-2-giorni.jpg.webp" alt="Tour delle Capitali Europee">
                 <h3 data-translate="european-capitals-tour">Tour Capitali Europee</h3>
                 <p data-translate="european-capitals-description">Visita le capitali più iconiche d'Europa con voli e hotel inclusi.</p>
-                <span>€1400</span>
+                <span class="price" data-price-eur="1400">€1400</span>
             </div>
-            <div class="offer">
+            <div class="offer" data-price-eur="3000" data-price-usd="3200" data-price-gbp="2400" data-price-krw="4050000" data-price-cny="21000" data-price-jpy="400000">
                 <img src="https://www.sposimagazine.it/wp-content/uploads/2024/03/viaggio-di-nozze-stati-uniti-new-york-cover.jpg" alt="Escursioni Montagna">
                 <h3 data-translate="north-america-tour">Tour nel nord America - Stati Uniti</h3>
                 <p data-translate="north-america-description">Scopri il fascino delle Alpi con un pacchetto completo.</p>
-                <span>€3000</span>
+                <span class="price" data-price-eur="3000">€3000</span>
             </div>
         </div>
     </section>
@@ -150,7 +150,7 @@
                     "japan-description": "Enjoy a dream vacation with accommodation and flights included.",
                     "european-capitals-tour": "European Capitals Tour",
                     "european-capitals-description": "Visit Europe's most iconic capitals with flights and hotels included.",
-                    "north-america-tour": "North America Tour - USA",
+                    "north-america-tour": "North America Tour - United States",
                     "north-america-description": "Discover the charm of the Alps with a complete package.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
@@ -333,6 +333,49 @@
                 }
             };
 
+            // Tassi di cambio
+            const exchangeRates = {
+                'usd': 1.06, // Tasso di cambio euro a dollaro
+                'gbp': 0.86, // Tasso di cambio euro a sterlina
+                'krw': 1350, // Tasso di cambio euro a won sudcoreano
+                'cny': 7.8,  // Tasso di cambio euro a yuan cinese
+                'jpy': 142    // Tasso di cambio euro a yen giapponese
+            };
+
+            function updatePrices(language) {
+                document.querySelectorAll('.price').forEach(function(priceElement) {
+                    const priceEur = parseFloat(priceElement.getAttribute('data-price-eur'));
+                    let formattedPrice;
+                    switch (language) {
+                        case 'en':
+                            // Prezzi in USD e GBP per l'inglese
+                            const priceUsd = (priceEur * exchangeRates['usd']).toFixed(2);
+                            const priceGbp = (priceEur * exchangeRates['gbp']).toFixed(2);
+                            formattedPrice = `$${priceUsd} / £${priceGbp}`;
+                            break;
+                        case 'ko':
+                            // Prezzi in KRW per il coreano
+                            const priceKrw = (priceEur * exchangeRates['krw']).toFixed(0);
+                            formattedPrice = `${priceKrw} ₩`;
+                            break;
+                        case 'zh':
+                            // Prezzi in CNY per il cinese
+                            const priceCny = (priceEur * exchangeRates['cny']).toFixed(2);
+                            formattedPrice = `¥${priceCny}`;
+                            break;
+                        case 'ja':
+                            // Prezzi in JPY per il giapponese
+                            const priceJpy = (priceEur * exchangeRates['jpy']).toFixed(0);
+                            formattedPrice = `¥${priceJpy}`;
+                            break;
+                        default:
+                            // Prezzi in EUR per le altre lingue
+                            formattedPrice = `€${priceEur.toFixed(2)}`;
+                    }
+                    priceElement.textContent = formattedPrice;
+                });
+            }
+
             function updateContent(language) {
                 document.querySelectorAll('[data-translate]').forEach(function(element) {
                     const key = element.getAttribute('data-translate');
@@ -342,6 +385,7 @@
                         element.textContent = translations[language][key] || element.textContent;
                     }
                 });
+                updatePrices(language); // Aggiungi l'aggiornamento dei prezzi
             }
 
             document.getElementById('language').addEventListener('change', function() {
