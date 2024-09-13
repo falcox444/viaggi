@@ -49,7 +49,7 @@
             </select>
 
             <label for="destination" data-translate="destination">Destinazione:</label>
-            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione">
+            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione" data-translate="destination-placeholder">
 
             <label for="check-in" data-translate="check-in">Check-in:</label>
             <input type="date" id="check-in" name="check-in">
@@ -86,7 +86,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
+        <p data-translate="footer-rights">&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
         <div class="social">
             <a href="#" data-translate="facebook">Facebook</a>
             <a href="#" data-translate="instagram">Instagram</a>
@@ -97,30 +97,6 @@
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Ottenere gli input delle date
-            const checkInInput = document.getElementById('check-in');
-            const checkOutInput = document.getElementById('check-out');
-
-            // Imposta la data odierna come data minima per il check-in
-            const today = new Date().toISOString().split('T')[0];
-            checkInInput.setAttribute('min', today);
-
-            // Quando viene selezionata una data di check-in
-            checkInInput.addEventListener('change', function() {
-                const checkInDate = checkInInput.value;
-                
-                // Imposta la data di check-out minima uguale o successiva alla data di check-in
-                checkOutInput.setAttribute('min', checkInDate);
-            });
-
-            // Imposta la data minima del check-out uguale alla data di check-in all'avvio
-            checkInInput.addEventListener('change', function() {
-                if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
-                    checkOutInput.value = '';
-                }
-            });
-
-            // Gestione della selezione della lingua
             const translations = {
                 "it": {
                     "home": "Home",
@@ -135,6 +111,7 @@
                     "hotel": "Solo Hotel",
                     "flight-hotel": "Volo + Hotel",
                     "destination": "Destinazione:",
+                    "destination-placeholder": "Inserisci la destinazione",
                     "check-in": "Check-in:",
                     "check-out": "Check-out:",
                     "search": "Cerca",
@@ -147,7 +124,8 @@
                     "north-america-description": "Scopri il fascino delle Alpi con un pacchetto completo.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
-                    "twitter": "Twitter"
+                    "twitter": "Twitter",
+                    "footer-rights": "Tutti i diritti riservati"
                 },
                 "en": {
                     "home": "Home",
@@ -162,19 +140,21 @@
                     "hotel": "Hotel Only",
                     "flight-hotel": "Flight + Hotel",
                     "destination": "Destination:",
+                    "destination-placeholder": "Enter destination",
                     "check-in": "Check-in:",
                     "check-out": "Check-out:",
                     "search": "Search",
                     "offers-title": "Featured Offers",
                     "japan-vacation": "Vacation in Japan",
-                    "japan-description": "Enjoy a dream vacation with accommodation and flight included.",
+                    "japan-description": "Enjoy a dream vacation with accommodation and flights included.",
                     "european-capitals-tour": "European Capitals Tour",
                     "european-capitals-description": "Visit Europe's most iconic capitals with flights and hotels included.",
                     "north-america-tour": "North America Tour - USA",
                     "north-america-description": "Discover the charm of the Alps with a complete package.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
-                    "twitter": "Twitter"
+                    "twitter": "Twitter",
+                    "footer-rights": "All rights reserved"
                 },
                 "es": {
                     "home": "Inicio",
@@ -189,19 +169,21 @@
                     "hotel": "Solo Hotel",
                     "flight-hotel": "Vuelo + Hotel",
                     "destination": "Destino:",
-                    "check-in": "Check-in:",
-                    "check-out": "Check-out:",
+                    "destination-placeholder": "Introduce el destino",
+                    "check-in": "Entrada:",
+                    "check-out": "Salida:",
                     "search": "Buscar",
                     "offers-title": "Ofertas Destacadas",
                     "japan-vacation": "Vacaciones en Japón",
                     "japan-description": "Disfruta de unas vacaciones de ensueño con alojamiento y vuelo incluidos.",
-                    "european-capitals-tour": "Tour de las Capitales Europeas",
+                    "european-capitals-tour": "Tour de Capitales Europeas",
                     "european-capitals-description": "Visita las capitales más icónicas de Europa con vuelos y hoteles incluidos.",
                     "north-america-tour": "Tour por América del Norte - Estados Unidos",
                     "north-america-description": "Descubre el encanto de los Alpes con un paquete completo.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
-                    "twitter": "Twitter"
+                    "twitter": "Twitter",
+                    "footer-rights": "Todos los derechos reservados"
                 },
                 "ko": {
                     "home": "홈",
@@ -210,25 +192,27 @@
                     "contact": "연락처",
                     "language": "언어:",
                     "welcome": "우리와 함께 세계를 발견하세요",
-                    "hero-description": "항공편, 호텔 또는 전체 패키지를 한 곳에서 예약하세요",
+                    "hero-description": "항공편, 호텔 또는 패키지를 한 곳에서 예약하세요",
                     "booking-type": "예약 유형:",
-                    "flight": "항공편만",
+                    "flight": "항공권만",
                     "hotel": "호텔만",
-                    "flight-hotel": "항공편 + 호텔",
+                    "flight-hotel": "항공권 + 호텔",
                     "destination": "목적지:",
+                    "destination-placeholder": "목적지를 입력하세요",
                     "check-in": "체크인:",
                     "check-out": "체크아웃:",
                     "search": "검색",
                     "offers-title": "추천 상품",
                     "japan-vacation": "일본에서의 휴가",
-                    "japan-description": "숙박 및 항공편이 포함된 꿈의 휴가를 즐기세요.",
+                    "japan-description": "숙소와 항공편이 포함된 꿈의 휴가를 즐기세요.",
                     "european-capitals-tour": "유럽 수도 투어",
-                    "european-capitals-description": "항공편과 호텔이 포함된 유럽의 가장 상징적인 수도를 방문하세요.",
+                    "european-capitals-description": "유럽의 상징적인 수도를 항공편과 호텔이 포함된 투어로 방문하세요.",
                     "north-america-tour": "북미 투어 - 미국",
                     "north-america-description": "알프스의 매력을 완벽한 패키지로 발견하세요.",
                     "facebook": "페이스북",
                     "instagram": "인스타그램",
-                    "twitter": "트위터"
+                    "twitter": "트위터",
+                    "footer-rights": "모든 권리 보유"
                 },
                 "ja": {
                     "home": "ホーム",
@@ -237,31 +221,33 @@
                     "contact": "お問い合わせ",
                     "language": "言語:",
                     "welcome": "私たちと一緒に世界を発見してください",
-                    "hero-description": "フライト、ホテル、または完全なパッケージを一つの場所で予約できます。",
+                    "hero-description": "フライト、ホテル、または完全なパッケージを一つの場所で予約できます",
                     "booking-type": "予約タイプ:",
                     "flight": "フライトのみ",
                     "hotel": "ホテルのみ",
                     "flight-hotel": "フライト + ホテル",
                     "destination": "目的地:",
+                    "destination-placeholder": "目的地を入力してください",
                     "check-in": "チェックイン:",
                     "check-out": "チェックアウト:",
                     "search": "検索",
-                    "offers-title": "特集オファー",
-                    "japan-vacation": "日本のバケーション",
-                    "japan-description": "宿泊とフライトが含まれる夢のようなバケーションをお楽しみください。",
+                    "offers-title": "おすすめのオファー",
+                    "japan-vacation": "日本でのバカンス",
+                    "japan-description": "宿泊とフライトが含まれる夢のようなバカンスをお楽しみください。",
                     "european-capitals-tour": "ヨーロッパの首都ツアー",
-                    "european-capitals-description": "フライトとホテルが含まれるヨーロッパの最も象徴的な首都を訪れましょう。",
+                    "european-capitals-description": "フライトとホテルが含まれるヨーロッパのアイコニックな首都を訪問してください。",
                     "north-america-tour": "北米ツアー - アメリカ合衆国",
-                    "north-america-description": "アルプスの魅力を完全なパッケージで発見しましょう。",
+                    "north-america-description": "完全なパッケージでアルプスの魅力を発見してください。",
                     "facebook": "フェイスブック",
                     "instagram": "インスタグラム",
-                    "twitter": "ツイッター"
+                    "twitter": "ツイッター",
+                    "footer-rights": "すべての権利を保有"
                 },
                 "zh": {
                     "home": "首页",
                     "bookings": "预订",
                     "offers": "优惠",
-                    "contact": "联系方式",
+                    "contact": "联系",
                     "language": "语言:",
                     "welcome": "与我们一起发现世界",
                     "hero-description": "在一个地方预订航班、酒店或完整的套餐",
@@ -270,19 +256,21 @@
                     "hotel": "仅酒店",
                     "flight-hotel": "航班 + 酒店",
                     "destination": "目的地:",
+                    "destination-placeholder": "输入目的地",
                     "check-in": "入住:",
                     "check-out": "退房:",
                     "search": "搜索",
-                    "offers-title": "精选优惠",
+                    "offers-title": "特色优惠",
                     "japan-vacation": "日本度假",
-                    "japan-description": "享受包括住宿和航班在内的梦幻假期。",
+                    "japan-description": "享受包含住宿和航班的梦幻假期。",
                     "european-capitals-tour": "欧洲首都之旅",
-                    "european-capitals-description": "参观欧洲最具标志性的首都，包括航班和酒店。",
+                    "european-capitals-description": "访问包括航班和酒店的欧洲最具标志性的首都。",
                     "north-america-tour": "北美之旅 - 美国",
-                    "north-america-description": "发现阿尔卑斯山的魅力，享受完整套餐。",
+                    "north-america-description": "通过完整的套餐发现阿尔卑斯山的魅力。",
                     "facebook": "脸书",
                     "instagram": "Instagram",
-                    "twitter": "推特"
+                    "twitter": "推特",
+                    "footer-rights": "保留所有权利"
                 },
                 "de": {
                     "home": "Startseite",
@@ -296,20 +284,22 @@
                     "flight": "Nur Flug",
                     "hotel": "Nur Hotel",
                     "flight-hotel": "Flug + Hotel",
-                    "destination": "Zielort:",
+                    "destination": "Ziel:",
+                    "destination-placeholder": "Ziel eingeben",
                     "check-in": "Check-in:",
                     "check-out": "Check-out:",
-                    "search": "Suche",
-                    "offers-title": "Empfohlene Angebote",
+                    "search": "Suchen",
+                    "offers-title": "Ausgewählte Angebote",
                     "japan-vacation": "Urlaub in Japan",
-                    "japan-description": "Genießen Sie einen Traumurlaub mit Unterkunft und Flug inklusive.",
+                    "japan-description": "Genießen Sie einen Traumurlaub mit Unterkunft und Flügen inklusive.",
                     "european-capitals-tour": "Europäische Hauptstädte Tour",
                     "european-capitals-description": "Besuchen Sie die ikonischsten Hauptstädte Europas mit Flügen und Hotels inklusive.",
                     "north-america-tour": "Nordamerika Tour - USA",
                     "north-america-description": "Entdecken Sie den Charme der Alpen mit einem Komplettpaket.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
-                    "twitter": "Twitter"
+                    "twitter": "Twitter",
+                    "footer-rights": "Alle Rechte vorbehalten"
                 },
                 "nl": {
                     "home": "Home",
@@ -319,52 +309,40 @@
                     "language": "Taal:",
                     "welcome": "Ontdek de wereld met ons",
                     "hero-description": "Boek vluchten, hotels of complete pakketten op één plek",
-                    "booking-type": "Boekingstype:",
-                    "flight": "Alleen Vliegtuig",
-                    "hotel": "Alleen Hotel",
-                    "flight-hotel": "Vliegtuig + Hotel",
+                    "booking-type": "Boekingsoptie:",
+                    "flight": "Vlucht Alleen",
+                    "hotel": "Hotel Alleen",
+                    "flight-hotel": "Vlucht + Hotel",
                     "destination": "Bestemming:",
+                    "destination-placeholder": "Voer bestemming in",
                     "check-in": "Inchecken:",
                     "check-out": "Uitchecken:",
                     "search": "Zoeken",
-                    "offers-title": "Aanbevolen Aanbiedingen",
+                    "offers-title": "Uitgelichte Aanbiedingen",
                     "japan-vacation": "Vakantie in Japan",
-                    "japan-description": "Geniet van een droomvakantie met accommodatie en vlucht inbegrepen.",
+                    "japan-description": "Geniet van een droomvakantie met accommodatie en vluchten inbegrepen.",
                     "european-capitals-tour": "Europese Hoofdsteden Tour",
-                    "european-capitals-description": "Bezoek de meest iconische hoofdsteden van Europa met vluchten en hotels inbegrepen.",
-                    "north-america-tour": "Noord-Amerika Tour - Verenigde Staten",
+                    "european-capitals-description": "Bezoek de iconische hoofdsteden van Europa met vluchten en hotels inbegrepen.",
+                    "north-america-tour": "Noord-Amerika Tour - VS",
                     "north-america-description": "Ontdek de charme van de Alpen met een compleet pakket.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
-                    "twitter": "Twitter"
+                    "twitter": "Twitter",
+                    "footer-rights": "Alle rechten voorbehouden"
                 }
             };
 
             function updateContent(language) {
-                document.querySelector('.hero-text h2').textContent = translations[language].welcome;
-                document.querySelector('.hero-text p').textContent = translations[language].hero-description;
-                document.querySelector('button.btn').textContent = translations[language].search;
-
                 document.querySelectorAll('header nav ul li a').forEach(function(link) {
                     link.textContent = translations[language][link.getAttribute('data-translate')];
                 });
 
                 document.querySelectorAll('form label').forEach(function(label) {
-                    label.textContent = translations[language][label.getAttribute('for')];
+                    label.textContent = translations[language][label.getAttribute('data-translate')];
                 });
 
-                document.querySelectorAll('.offer-container .offer h3').forEach(function(offer, index) {
-                    const keys = ["japan-vacation", "european-capitals-tour", "north-america-tour"];
-                    offer.textContent = translations[language][keys[index]];
-                });
-
-                document.querySelectorAll('.offer-container .offer p').forEach(function(description, index) {
-                    const keys = ["japan-description", "european-capitals-description", "north-america-description"];
-                    description.textContent = translations[language][keys[index]];
-                });
-
-                document.querySelectorAll('footer .social a').forEach(function(link) {
-                    link.textContent = translations[language][link.getAttribute('data-translate')];
+                document.querySelectorAll('[data-translate]').forEach(function(element) {
+                    element.textContent = translations[language][element.getAttribute('data-translate')];
                 });
             }
 
@@ -372,7 +350,7 @@
                 updateContent(this.value);
             });
 
-            // Impostare la lingua di default
+            // Initialize with default language (Italian)
             updateContent('it');
         });
     </script>
