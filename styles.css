@@ -5,43 +5,43 @@
 .language-selector select {
     padding: 5px;
     border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 15px; /* Dimensioni dell'immagine della bandiera */
 }
 
 .language-selector option {
-    padding-left: 25px; /* Spazio per la bandiera */
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 20px 20px; /* Dimensioni dell'immagine della bandiera */
+    padding-left: 30px; /* Spazio per la bandiera */
 }
 
 .language-selector option[value="it"] {
-    background-image: url('https://www.countryflags.io/it/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/it.png');
 }
 
 .language-selector option[value="en"] {
-    background-image: url('https://www.countryflags.io/gb/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/gb.png');
 }
 
 .language-selector option[value="es"] {
-    background-image: url('https://www.countryflags.io/es/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/es.png');
 }
 
 .language-selector option[value="ko"] {
-    background-image: url('https://www.countryflags.io/kr/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/kr.png');
 }
 
 .language-selector option[value="ja"] {
-    background-image: url('https://www.countryflags.io/jp/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/jp.png');
 }
 
 .language-selector option[value="zh"] {
-    background-image: url('https://www.countryflags.io/cn/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/cn.png');
 }
 
 .language-selector option[value="de"] {
-    background-image: url('https://www.countryflags.io/de/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/de.png');
 }
 
 .language-selector option[value="nl"] {
-    background-image: url('https://www.countryflags.io/nl/shiny/32.png');
+    background-image: url('https://flagcdn.com/w20/nl.png');
 }
