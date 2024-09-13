@@ -119,6 +119,52 @@
                     checkOutInput.value = '';
                 }
             });
+
+            // Gestione della selezione della lingua
+            const translations = {
+                "it": {
+                    "welcome": "Scopri il Mondo con Noi",
+                    "search": "Cerca"
+                },
+                "en": {
+                    "welcome": "Discover the World with Us",
+                    "search": "Search"
+                },
+                "es": {
+                    "welcome": "Descubre el Mundo con Nosotros",
+                    "search": "Buscar"
+                },
+                "ko": {
+                    "welcome": "우리와 함께 세계를 발견하세요",
+                    "search": "검색"
+                },
+                "ja": {
+                    "welcome": "私たちと一緒に世界を発見してください",
+                    "search": "検索"
+                },
+                "zh": {
+                    "welcome": "与我们一起发现世界",
+                    "search": "搜索"
+                },
+                "de": {
+                    "welcome": "Entdecken Sie die Welt mit uns",
+                    "search": "Suche"
+                },
+                "nl": {
+                    "welcome": "Ontdek de wereld met ons",
+                    "search": "Zoeken"
+                }
+            };
+
+            function updateContent(language) {
+                document.querySelector('.hero-text h2').textContent = translations[language].welcome;
+                document.querySelector('button.btn').textContent = translations[language].search;
+            }
+
+            document.getElementById('language').addEventListener('change', function() {
+                const selectedLanguage = this.value;
+                updateContent(selectedLanguage);
+            });
         });
     </script>
 </body>
