@@ -1,126 +1,105 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prenota voli, hotel e pacchetti viaggio con facilità">
-    <title>TravelNow - Prenota il Tuo Viaggio</title>
+    <title>Travel Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>TravelNow</h1>
-        </div>
         <nav>
             <ul>
-                <li><a href="#home" data-translate="home">Home</a></li>
-                <li><a href="#bookings" data-translate="bookings">Prenotazioni</a></li>
-                <li><a href="#offers" data-translate="offers">Offerte</a></li>
-                <li><a href="#contact" data-translate="contact">Contatti</a></li>
+                <li><a href="#" data-translate="home">Home</a></li>
+                <li><a href="#" data-translate="bookings">Bookings</a></li>
+                <li><a href="#" data-translate="offers">Offers</a></li>
+                <li><a href="#" data-translate="contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="language-selector">
-            <label for="language" data-translate="language">Lingua:</label>
-            <select id="language" name="language">
-                <option value="it" data-flag="🇮🇹">Italiano</option>
-                <option value="en" data-flag="🇬🇧">English</option>
-                <option value="es" data-flag="🇪🇸">Español</option>
-                <option value="ko" data-flag="🇰🇷">한국어</option>
-                <option value="ja" data-flag="🇯🇵">日本語</option>
-                <option value="zh" data-flag="🇨🇳">中文</option>
-                <option value="de" data-flag="🇩🇪">Deutsch</option>
-                <option value="nl" data-flag="🇳🇱">Nederlands</option>
-            </select>
-        </div>
+        <select id="language">
+            <option value="it">Italiano</option>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="de">Deutsch</option>
+            <option value="nl">Nederlands</option>
+            <option value="es">Español</option>
+        </select>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <h2 data-translate="welcome">Scopri il Mondo con Noi</h2>
-            <p data-translate="hero-description">Prenota voli, hotel o pacchetti completi in un unico posto</p>
-        </div>
-        <form id="search-form">
-            <label for="booking-type" data-translate="booking-type">Tipo di prenotazione:</label>
-            <select id="booking-type" name="booking-type">
-                <option value="flight" data-translate="flight">Solo Volo</option>
-                <option value="hotel" data-translate="hotel">Solo Hotel</option>
-                <option value="flight-hotel" data-translate="flight-hotel">Volo + Hotel</option>
-            </select>
+    <main>
+        <section id="hero">
+            <h1 data-translate="welcome">Discover the World with Us</h1>
+            <p data-translate="hero-description">Book flights, hotels, or complete packages in one place</p>
+            <form id="booking-form">
+                <label for="booking-type" data-translate="booking-type">Booking Type:</label>
+                <select id="booking-type">
+                    <option value="flight" data-translate="flight">Flight Only</option>
+                    <option value="hotel" data-translate="hotel">Hotel Only</option>
+                    <option value="flight-hotel" data-translate="flight-hotel">Flight + Hotel</option>
+                </select>
+                <label for="destination" data-translate="destination">Destination:</label>
+                <input type="text" id="destination" placeholder="Enter Destination" data-translate="destination-placeholder">
+                <label for="check-in" data-translate="check-in">Check-in:</label>
+                <input type="date" id="check-in">
+                <label for="check-out" data-translate="check-out">Check-out:</label>
+                <input type="date" id="check-out">
+                <button type="submit" data-translate="search">Search</button>
+            </form>
+        </section>
 
-            <label for="destination" data-translate="destination">Destinazione:</label>
-            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione" data-translate="destination-placeholder">
-
-            <label for="check-in" data-translate="check-in">Check-in:</label>
-            <input type="date" id="check-in" name="check-in">
-
-            <label for="check-out" data-translate="check-out">Check-out:</label>
-            <input type="date" id="check-out" name="check-out">
-
-            <button type="submit" class="btn" data-translate="search">Cerca</button>
-        </form>
-    </section>
-
-    <section id="offers" class="offers">
-        <h2 data-translate="offers-title">Offerte in Evidenza</h2>
-        <div class="offer-container">
-            <div class="offer" data-price="3300">
-                <img src="https://www.bgviaggi.com/images/Giappone_principal.jpg" alt="Offerta Vacanza al Mare">
-                <h3 data-translate="japan-vacation">Vacanza in Giappone</h3>
-                <p data-translate="japan-description">Goditi una vacanza da sogno con alloggio e volo inclusi.</p>
-                <span class="price">€3300</span>
+        <section id="offers">
+            <h2 data-translate="offers-title">Featured Offers</h2>
+            <div class="offer">
+                <h3 data-translate="japan-vacation">Japan Vacation</h3>
+                <p data-translate="japan-description">Enjoy a dream vacation with accommodation and flights included.</p>
+                <span class="price" data-price="1000"></span>
             </div>
-            <div class="offer" data-price="1400">
-                <img src="https://www.viaggiamo.it/wp-content/uploads/2019/08/capitali-europee-da-vedere-in-2-giorni.jpg.webp" alt="Tour delle Capitali Europee">
-                <h3 data-translate="european-capitals-tour">Tour Capitali Europee</h3>
-                <p data-translate="european-capitals-description">Visita le capitali più iconiche d'Europa con voli e hotel inclusi.</p>
-                <span class="price">€1400</span>
+            <div class="offer">
+                <h3 data-translate="european-capitals-tour">European Capitals Tour</h3>
+                <p data-translate="european-capitals-description">Visit Europe's most iconic capitals with flights and hotels included.</p>
+                <span class="price" data-price="2000"></span>
             </div>
-            <div class="offer" data-price="2500">
-                <img src="https://www.sposimagazine.it/wp-content/uploads/2024/03/viaggio-di-nozze.jpg" alt="Viaggio di Nozze ai Caraibi">
-                <h3 data-translate="honeymoon-caribbean">Viaggio di Nozze ai Caraibi</h3>
-                <p data-translate="honeymoon-description">Il viaggio di nozze perfetto con sistemazione di lusso e escursioni incluse.</p>
-                <span class="price">€2500</span>
+            <div class="offer">
+                <h3 data-translate="honeymoon-caribbean">Caribbean Honeymoon</h3>
+                <p data-translate="honeymoon-description">The perfect honeymoon with luxury accommodation and included excursions.</p>
+                <span class="price" data-price="3000"></span>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
-        <div class="social">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </div>
+        <p>&copy; 2024 Travel Booking. All rights reserved.</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function () {
             const translations = {
                 'it': {
                     'home': 'Home',
                     'bookings': 'Prenotazioni',
                     'offers': 'Offerte',
-                    'contact': 'Contatti',
+                    'contact': 'Contatto',
                     'language': 'Lingua:',
-                    'welcome': 'Scopri il Mondo con Noi',
+                    'welcome': 'Scopri il mondo con noi',
                     'hero-description': 'Prenota voli, hotel o pacchetti completi in un unico posto',
                     'booking-type': 'Tipo di prenotazione:',
-                    'flight': 'Solo Volo',
-                    'hotel': 'Solo Hotel',
+                    'flight': 'Solo volo',
+                    'hotel': 'Solo hotel',
                     'flight-hotel': 'Volo + Hotel',
                     'destination': 'Destinazione:',
                     'destination-placeholder': 'Inserisci la destinazione',
                     'check-in': 'Check-in:',
                     'check-out': 'Check-out:',
                     'search': 'Cerca',
-                    'offers-title': 'Offerte in Evidenza',
+                    'offers-title': 'Offerte in evidenza',
                     'japan-vacation': 'Vacanza in Giappone',
-                    'japan-description': 'Goditi una vacanza da sogno con alloggio e volo inclusi.',
-                    'european-capitals-tour': 'Tour Capitali Europee',
-                    'european-capitals-description': 'Visita le capitali più iconiche d\'Europa con voli e hotel inclusi.',
-                    'honeymoon-caribbean': 'Viaggio di Nozze ai Caraibi',
-                    'honeymoon-description': 'Il viaggio di nozze perfetto con sistemazione di lusso e escursioni incluse.'
+                    'japan-description': 'Goditi una vacanza da sogno con alloggio e voli inclusi.',
+                    'european-capitals-tour': 'Tour delle Capitali Europee',
+                    'european-capitals-description': 'Visita le capitali più iconiche d’Europa con voli e hotel inclusi.',
+                    'honeymoon-caribbean': 'Luna di miele ai Caraibi',
+                    'honeymoon-description': 'La luna di miele perfetta con sistemazione di lusso e escursioni incluse.'
                 },
                 'en': {
                     'home': 'Home',
@@ -135,15 +114,15 @@
                     'hotel': 'Hotel Only',
                     'flight-hotel': 'Flight + Hotel',
                     'destination': 'Destination:',
-                    'destination-placeholder': 'Enter destination',
+                    'destination-placeholder': 'Enter Destination',
                     'check-in': 'Check-in:',
                     'check-out': 'Check-out:',
                     'search': 'Search',
                     'offers-title': 'Featured Offers',
                     'japan-vacation': 'Japan Vacation',
-                    'japan-description': 'Enjoy a dream vacation with accommodation and flight included.',
+                    'japan-description': 'Enjoy a dream vacation with accommodation and flights included.',
                     'european-capitals-tour': 'European Capitals Tour',
-                    'european-capitals-description': 'Visit Europe’s most iconic capitals with flights and hotels included.',
+                    'european-capitals-description': 'Visit Europe\'s most iconic capitals with flights and hotels included.',
                     'honeymoon-caribbean': 'Caribbean Honeymoon',
                     'honeymoon-description': 'The perfect honeymoon with luxury accommodation and included excursions.'
                 },
@@ -151,7 +130,7 @@
                     'home': '首页',
                     'bookings': '预订',
                     'offers': '优惠',
-                    'contact': '联系我们',
+                    'contact': '联系方式',
                     'language': '语言:',
                     'welcome': '与我们一起探索世界',
                     'hero-description': '在一个地方预订航班、酒店或完整的套餐',
@@ -195,7 +174,7 @@
                     'european-capitals-tour': 'ヨーロッパの首都ツアー',
                     'european-capitals-description': 'フライトとホテルが含まれるヨーロッパの最も象徴的な首都を訪問してください。',
                     'honeymoon-caribbean': 'カリブ海のハネムーン',
-                    'honeymoon-description': '豪華な宿泊施設と含まれるツアーで完璧なハネムーンをお楽しみください。'
+                    'honeymoon-description': '豪華な宿泊施設と含まれるエクスカーションを備えた完璧なハネムーン。'
                 },
                 'ko': {
                     'home': '홈',
@@ -203,8 +182,8 @@
                     'offers': '제안',
                     'contact': '연락처',
                     'language': '언어:',
-                    'welcome': '우리와 함께 세상을 발견하세요',
-                    'hero-description': '하나의 장소에서 항공편, 호텔 또는 전체 패키지를 예약하세요',
+                    'welcome': '저희와 함께 세계를 발견하세요',
+                    'hero-description': '한 곳에서 항공편, 호텔 또는 전체 패키지를 예약하세요',
                     'booking-type': '예약 유형:',
                     'flight': '항공편만',
                     'hotel': '호텔만',
@@ -214,13 +193,13 @@
                     'check-in': '체크인:',
                     'check-out': '체크아웃:',
                     'search': '검색',
-                    'offers-title': '추천 상품',
+                    'offers-title': '추천 제안',
                     'japan-vacation': '일본 휴가',
                     'japan-description': '숙소와 항공편이 포함된 꿈의 휴가를 즐기세요.',
                     'european-capitals-tour': '유럽 수도 투어',
-                    'european-capitals-description': '항공편과 호텔이 포함된 유럽의 가장 상징적인 수도를 방문하세요.',
-                    'honeymoon-caribbean': '카리브해 허니문',
-                    'honeymoon-description': '럭셔리 숙소와 포함된 투어로 완벽한 허니문을 즐기세요.'
+                    'european-capitals-description': '유럽의 가장 상징적인 수도를 방문하세요. 항공편과 호텔이 포함됩니다.',
+                    'honeymoon-caribbean': '카리브해 신혼여행',
+                    'honeymoon-description': '럭셔리 숙소와 포함된 투어가 포함된 완벽한 신혼여행.'
                 },
                 'de': {
                     'home': 'Startseite',
@@ -234,21 +213,21 @@
                     'flight': 'Nur Flug',
                     'hotel': 'Nur Hotel',
                     'flight-hotel': 'Flug + Hotel',
-                    'destination': 'Ziel:',
-                    'destination-placeholder': 'Ziel eingeben',
+                    'destination': 'Zielort:',
+                    'destination-placeholder': 'Zielort eingeben',
                     'check-in': 'Check-in:',
                     'check-out': 'Check-out:',
                     'search': 'Suche',
                     'offers-title': 'Empfohlene Angebote',
                     'japan-vacation': 'Japan Urlaub',
-                    'japan-description': 'Genießen Sie einen Traumurlaub mit Unterkunft und Flug.',
+                    'japan-description': 'Genießen Sie einen Traumurlaub mit Unterkunft und Flügen inklusive.',
                     'european-capitals-tour': 'Europäische Hauptstädte Tour',
-                    'european-capitals-description': 'Besuchen Sie die ikonischsten Hauptstädte Europas mit Flügen und Hotels.',
+                    'european-capitals-description': 'Besuchen Sie die ikonischsten Hauptstädte Europas mit Flügen und Hotels inklusive.',
                     'honeymoon-caribbean': 'Karibik Hochzeitsreise',
-                    'honeymoon-description': 'Die perfekte Hochzeitsreise mit luxuriöser Unterkunft und inkludierten Ausflügen.'
+                    'honeymoon-description': 'Die perfekte Hochzeitsreise mit luxuriöser Unterkunft und eingeschlossenen Ausflügen.'
                 },
                 'nl': {
-                    'home': 'Home',
+                    'home': 'Startpagina',
                     'bookings': 'Boekingen',
                     'offers': 'Aanbiedingen',
                     'contact': 'Contact',
@@ -264,13 +243,13 @@
                     'check-in': 'Inchecken:',
                     'check-out': 'Uitchecken:',
                     'search': 'Zoeken',
-                    'offers-title': 'Uitgelichte Aanbiedingen',
-                    'japan-vacation': 'Japan Vakantie',
-                    'japan-description': 'Geniet van een droomvakantie met accommodatie en vlucht inbegrepen.',
+                    'offers-title': 'Aanbevolen Aanbiedingen',
+                    'japan-vacation': 'Vakantie in Japan',
+                    'japan-description': 'Geniet van een droomvakantie met accommodatie en vluchten inbegrepen.',
                     'european-capitals-tour': 'Europese Hoofdsteden Tour',
-                    'european-capitals-description': 'Bezoek de meest iconische hoofdsteden van Europa met vluchten en hotels inbegrepen.',
+                    'european-capitals-description': 'Bezoek de meest iconische hoofdsteden van Europa met inbegrepen vluchten en hotels.',
                     'honeymoon-caribbean': 'Caribische Honeymoon',
-                    'honeymoon-description': 'De perfecte huwelijksreis met luxe accommodatie en inbegrepen excursies.'
+                    'honeymoon-description': 'De perfecte honeymoon met luxe accommodatie en inbegrepen excursies.'
                 },
                 'es': {
                     'home': 'Inicio',
@@ -278,11 +257,11 @@
                     'offers': 'Ofertas',
                     'contact': 'Contacto',
                     'language': 'Idioma:',
-                    'welcome': 'Descubre el Mundo con Nosotros',
+                    'welcome': 'Descubre el mundo con nosotros',
                     'hero-description': 'Reserva vuelos, hoteles o paquetes completos en un solo lugar',
                     'booking-type': 'Tipo de reserva:',
-                    'flight': 'Solo Vuelo',
-                    'hotel': 'Solo Hotel',
+                    'flight': 'Solo vuelo',
+                    'hotel': 'Solo hotel',
                     'flight-hotel': 'Vuelo + Hotel',
                     'destination': 'Destino:',
                     'destination-placeholder': 'Ingresa el destino',
@@ -291,7 +270,7 @@
                     'search': 'Buscar',
                     'offers-title': 'Ofertas Destacadas',
                     'japan-vacation': 'Vacaciones en Japón',
-                    'japan-description': 'Disfruta de unas vacaciones de ensueño con alojamiento y vuelo incluidos.',
+                    'japan-description': 'Disfruta de unas vacaciones de ensueño con alojamiento y vuelos incluidos.',
                     'european-capitals-tour': 'Tour de Capitales Europeas',
                     'european-capitals-description': 'Visita las capitales más icónicas de Europa con vuelos y hoteles incluidos.',
                     'honeymoon-caribbean': 'Luna de Miel en el Caribe',
@@ -301,32 +280,35 @@
 
             const currencyFormats = {
                 'en': { 'USD': '$', 'GBP': '£' },
-                'zh': { 'CNY': '¥' }, 
+                'zh': { 'CNY': '¥' },
                 'ja': { 'JPY': '¥' },
                 'ko': { 'KRW': '₩' },
-                'de': { 'EUR': '€' },  // Adding Euro for German as a default
-                'nl': { 'EUR': '€' },  // Adding Euro for Dutch as a default
-                'es': { 'EUR': '€' }   // Adding Euro for Spanish as a default
+                'de': { 'EUR': '€' },
+                'nl': { 'EUR': '€' },
+                'es': { 'EUR': '€' },
+                'it': { 'EUR': '€' }
             };
 
-            const elementsToTranslate = document.querySelectorAll('[data-translate]');
-            const priceElements = document.querySelectorAll('.price');
             const languageSelector = document.getElementById('language');
+            const translatableElements = document.querySelectorAll('[data-translate]');
+            const priceElements = document.querySelectorAll('.price');
 
             function translatePage(language) {
-                elementsToTranslate.forEach(el => {
+                translatableElements.forEach(el => {
                     const key = el.getAttribute('data-translate');
-                    if (translations[language] && translations[language][key]) {
-                        el.textContent = translations[language][key];
-                    }
+                    el.textContent = translations[language][key] || el.textContent;
                 });
 
+                updatePrices(language);
+            }
+
+            function updatePrices(language) {
+                const basePrice = 1000;
+
                 priceElements.forEach(el => {
-                    const basePrice = el.getAttribute('data-price');
                     let price;
                     if (language === 'en') {
-                        // Randomly select between USD and GBP for demonstration purposes
-                        price = Math.random() > 0.5 ? `$${(basePrice / 1).toFixed(2)}` : `£${(basePrice / 0.9).toFixed(2)}`;
+                        price = Math.random() > 0.5 ? `${currencyFormats[language]['USD']}${(basePrice / 1).toFixed(2)}` : `${currencyFormats[language]['GBP']}${(basePrice / 0.9).toFixed(2)}`;
                     } else if (language === 'zh') {
                         price = `${currencyFormats[language]['CNY']}${(basePrice / 7).toFixed(2)}`;
                     } else if (language === 'ja') {
