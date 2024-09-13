@@ -99,6 +99,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const checkInInput = document.getElementById('check-in');
             const checkOutInput = document.getElementById('check-out');
+            const destinationInput = document.getElementById('destination');
 
             function validateDates() {
                 const today = new Date().toISOString().split('T')[0];
@@ -168,7 +169,7 @@
                     "check-out": "Check-out:",
                     "search": "Search",
                     "offers-title": "Featured Offers",
-                    "japan-vacation": "Vacation in Japan",
+                    "japan-vacation": "Japan Vacation",
                     "japan-description": "Enjoy a dream vacation with accommodation and flight included.",
                     "european-capitals-tour": "European Capitals Tour",
                     "european-capitals-description": "Visit the most iconic capitals of Europe with flights and hotels included.",
@@ -361,7 +362,11 @@
                 
                 elementsToTranslate.forEach(function(el) {
                     const key = el.getAttribute('data-translate');
-                    el.innerText = translations[selectedLang][key] || key;
+                    if (el.placeholder) {
+                        el.placeholder = translations[selectedLang][key] || key;
+                    } else {
+                        el.innerText = translations[selectedLang][key] || key;
+                    }
                 });
             });
         });
