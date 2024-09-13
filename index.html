@@ -14,14 +14,14 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home" data-translate="home">Home</a></li>
-                <li><a href="#bookings" data-translate="bookings">Prenotazioni</a></li>
-                <li><a href="#offers" data-translate="offers">Offerte</a></li>
-                <li><a href="#contact" data-translate="contact">Contatti</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#bookings">Prenotazioni</a></li>
+                <li><a href="#offers">Offerte</a></li>
+                <li><a href="#contact">Contatti</a></li>
             </ul>
         </nav>
         <div class="language-selector">
-            <label for="language" data-translate="language">Lingua:</label>
+            <label for="language">Lingua:</label>
             <select id="language" name="language">
                 <option value="it" data-flag="🇮🇹">Italiano</option>
                 <option value="en" data-flag="🇬🇧">English</option>
@@ -37,67 +37,66 @@
 
     <section id="home" class="hero">
         <div class="hero-text">
-            <h2 data-translate="welcome">Scopri il Mondo con Noi</h2>
-            <p data-translate="hero-description">Prenota voli, hotel o pacchetti completi in un unico posto</p>
+            <h2>Scopri il Mondo con Noi</h2>
+            <p>Prenota voli, hotel o pacchetti completi in un unico posto</p>
         </div>
         <form id="search-form">
-            <label for="booking-type" data-translate="booking-type">Tipo di prenotazione:</label>
+            <label for="booking-type">Tipo di prenotazione:</label>
             <select id="booking-type" name="booking-type">
-                <option value="flight" data-translate="flight">Solo Volo</option>
-                <option value="hotel" data-translate="hotel">Solo Hotel</option>
-                <option value="flight-hotel" data-translate="flight-hotel">Volo + Hotel</option>
+                <option value="flight">Solo Volo</option>
+                <option value="hotel">Solo Hotel</option>
+                <option value="flight-hotel">Volo + Hotel</option>
             </select>
 
-            <label for="destination" data-translate="destination">Destinazione:</label>
-            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione" data-translate="destination-placeholder">
+            <label for="destination">Destinazione:</label>
+            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione">
 
-            <label for="check-in" data-translate="check-in">Check-in:</label>
+            <label for="check-in">Check-in:</label>
             <input type="date" id="check-in" name="check-in">
 
-            <label for="check-out" data-translate="check-out">Check-out:</label>
+            <label for="check-out">Check-out:</label>
             <input type="date" id="check-out" name="check-out">
 
-            <button type="submit" class="btn" data-translate="search">Cerca</button>
+            <button type="submit" class="btn">Cerca</button>
         </form>
     </section>
 
     <section id="offers" class="offers">
-        <h2 data-translate="offers-title">Offerte in Evidenza</h2>
+        <h2>Offerte in Evidenza</h2>
         <div class="offer-container">
             <div class="offer">
                 <img src="https://www.bgviaggi.com/images/Giappone_principal.jpg" alt="Offerta Vacanza al Mare">
-                <h3 data-translate="japan-vacation">Vacanza in Giappone</h3>
-                <p data-translate="japan-description">Goditi una vacanza da sogno con alloggio e volo inclusi.</p>
-                <span>€3300</span>
+                <h3>Vacanza in Giappone</h3>
+                <p>Goditi una vacanza da sogno con alloggio e volo inclusi.</p>
+                <span class="price" data-price="3300">€3300</span>
             </div>
             <div class="offer">
                 <img src="https://www.viaggiamo.it/wp-content/uploads/2019/08/capitali-europee-da-vedere-in-2-giorni.jpg.webp" alt="Tour delle Capitali Europee">
-                <h3 data-translate="european-capitals-tour">Tour Capitali Europee</h3>
-                <p data-translate="european-capitals-description">Visita le capitali più iconiche d'Europa con voli e hotel inclusi.</p>
-                <span>€1400</span>
+                <h3>Tour Capitali Europee</h3>
+                <p>Visita le capitali più iconiche d'Europa con voli e hotel inclusi.</p>
+                <span class="price" data-price="1400">€1400</span>
             </div>
             <div class="offer">
                 <img src="https://www.sposimagazine.it/wp-content/uploads/2024/03/viaggio-di-nozze-stati-uniti-new-york-cover.jpg" alt="Escursioni Montagna">
-                <h3 data-translate="north-america-tour">Tour nel nord America - Stati Uniti</h3>
-                <p data-translate="north-america-description">Scopri il fascino delle Alpi con un pacchetto completo.</p>
-                <span>€3000</span>
+                <h3>Tour nel nord America - Stati Uniti</h3>
+                <p>Scopri il fascino delle Alpi con un pacchetto completo.</p>
+                <span class="price" data-price="3000">€3000</span>
             </div>
         </div>
     </section>
 
     <footer>
-        <p data-translate="footer-rights">&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
+        <p>&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
         <div class="social">
-            <a href="#" data-translate="facebook">Facebook</a>
-            <a href="#" data-translate="instagram">Instagram</a>
-            <a href="#" data-translate="twitter">Twitter</a>
+            <a id="facebook" href="#">Facebook</a>
+            <a id="instagram" href="#">Instagram</a>
+            <a id="twitter" href="#">Twitter</a>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Traduzioni per ogni lingua
             const translations = {
                 "it": {
                     "home": "Home",
@@ -135,7 +134,7 @@
                     "contact": "Contact",
                     "language": "Language:",
                     "welcome": "Discover the World with Us",
-                    "hero-description": "Book flights, hotels or complete packages in one place",
+                    "hero-description": "Book flights, hotels or complete packages all in one place",
                     "booking-type": "Booking Type:",
                     "flight": "Flight Only",
                     "hotel": "Hotel Only",
@@ -149,9 +148,9 @@
                     "japan-vacation": "Vacation in Japan",
                     "japan-description": "Enjoy a dream vacation with accommodation and flights included.",
                     "european-capitals-tour": "European Capitals Tour",
-                    "european-capitals-description": "Visit Europe's most iconic capitals with flights and hotels included.",
+                    "european-capitals-description": "Visit the most iconic capitals with flights and hotels included.",
                     "north-america-tour": "North America Tour - USA",
-                    "north-america-description": "Discover the charm of the Alps with a complete package.",
+                    "north-america-description": "Experience the charm of the Alps with a complete package.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
                     "twitter": "Twitter",
@@ -165,7 +164,7 @@
                     "language": "Idioma:",
                     "welcome": "Descubre el Mundo con Nosotros",
                     "hero-description": "Reserva vuelos, hoteles o paquetes completos en un solo lugar",
-                    "booking-type": "Tipo de reserva:",
+                    "booking-type": "Tipo de Reserva:",
                     "flight": "Solo Vuelo",
                     "hotel": "Solo Hotel",
                     "flight-hotel": "Vuelo + Hotel",
@@ -177,9 +176,9 @@
                     "offers-title": "Ofertas Destacadas",
                     "japan-vacation": "Vacaciones en Japón",
                     "japan-description": "Disfruta de unas vacaciones de ensueño con alojamiento y vuelo incluidos.",
-                    "european-capitals-tour": "Tour Capitales Europeas",
+                    "european-capitals-tour": "Tour de Capitales Europeas",
                     "european-capitals-description": "Visita las capitales más icónicas de Europa con vuelos y hoteles incluidos.",
-                    "north-america-tour": "Tour por América del Norte - EE. UU.",
+                    "north-america-tour": "Tour por América del Norte - Estados Unidos",
                     "north-america-description": "Descubre el encanto de los Alpes con un paquete completo.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
@@ -193,11 +192,11 @@
                     "contact": "연락처",
                     "language": "언어:",
                     "welcome": "우리와 함께 세계를 발견하세요",
-                    "hero-description": "항공권, 호텔 또는 패키지를 한 곳에서 예약하세요",
+                    "hero-description": "항공편, 호텔 또는 패키지를 한 곳에서 예약하세요",
                     "booking-type": "예약 유형:",
-                    "flight": "항공권만",
+                    "flight": "항공편만",
                     "hotel": "호텔만",
-                    "flight-hotel": "항공권 + 호텔",
+                    "flight-hotel": "항공편 + 호텔",
                     "destination": "목적지:",
                     "destination-placeholder": "목적지를 입력하세요",
                     "check-in": "체크인:",
@@ -207,9 +206,9 @@
                     "japan-vacation": "일본 휴가",
                     "japan-description": "숙박과 항공편이 포함된 꿈의 휴가를 즐기세요.",
                     "european-capitals-tour": "유럽 수도 투어",
-                    "european-capitals-description": "유럽의 가장 상징적인 수도를 항공편과 호텔이 포함된 투어로 방문하세요.",
+                    "european-capitals-description": "항공편과 호텔이 포함된 유럽의 상징적인 수도를 방문하세요.",
                     "north-america-tour": "북미 투어 - 미국",
-                    "north-america-description": "완벽한 패키지로 알프스의 매력을 발견하세요.",
+                    "north-america-description": "완벽한 패키지로 알프스의 매력을 경험하세요.",
                     "facebook": "페이스북",
                     "instagram": "인스타그램",
                     "twitter": "트위터",
@@ -219,10 +218,10 @@
                     "home": "ホーム",
                     "bookings": "予約",
                     "offers": "オファー",
-                    "contact": "連絡先",
+                    "contact": "お問い合わせ",
                     "language": "言語:",
                     "welcome": "私たちと一緒に世界を発見してください",
-                    "hero-description": "フライト、ホテル、または完全なパッケージを1つの場所で予約する",
+                    "hero-description": "フライト、ホテル、または完全なパッケージを1か所で予約できます",
                     "booking-type": "予約タイプ:",
                     "flight": "フライトのみ",
                     "hotel": "ホテルのみ",
@@ -233,12 +232,12 @@
                     "check-out": "チェックアウト:",
                     "search": "検索",
                     "offers-title": "特集オファー",
-                    "japan-vacation": "日本の休暇",
-                    "japan-description": "宿泊とフライトが含まれた夢のような休暇をお楽しみください。",
-                    "european-capitals-tour": "ヨーロッパの首都ツアー",
-                    "european-capitals-description": "フライトとホテルが含まれたヨーロッパの最も象徴的な首都を訪問してください。",
-                    "north-america-tour": "北米ツアー - アメリカ合衆国",
-                    "north-america-description": "完璧なパッケージでアルプスの魅力を発見してください。",
+                    "japan-vacation": "日本のバケーション",
+                    "japan-description": "宿泊とフライトが含まれる夢のバケーションをお楽しみください。",
+                    "european-capitals-tour": "ヨーロッパ首都ツアー",
+                    "european-capitals-description": "フライトとホテルが含まれるヨーロッパの象徴的な首都を訪れましょう。",
+                    "north-america-tour": "北アメリカツアー - アメリカ合衆国",
+                    "north-america-description": "アルプスの魅力を完全なパッケージで体験してください。",
                     "facebook": "フェイスブック",
                     "instagram": "インスタグラム",
                     "twitter": "ツイッター",
@@ -263,11 +262,11 @@
                     "search": "搜索",
                     "offers-title": "精选优惠",
                     "japan-vacation": "日本度假",
-                    "japan-description": "享受包括住宿和航班的梦想假期。",
+                    "japan-description": "享受包含住宿和航班的梦幻假期。",
                     "european-capitals-tour": "欧洲首都之旅",
-                    "european-capitals-description": "参观欧洲最具标志性的首都，包括航班和酒店。",
+                    "european-capitals-description": "参观最具标志性的首都，包括航班和酒店。",
                     "north-america-tour": "北美之旅 - 美国",
-                    "north-america-description": "通过一个完整的套餐发现阿尔卑斯山的魅力。",
+                    "north-america-description": "通过完整的套餐体验阿尔卑斯山的魅力。",
                     "facebook": "脸书",
                     "instagram": "Instagram",
                     "twitter": "推特",
@@ -280,23 +279,23 @@
                     "contact": "Kontakt",
                     "language": "Sprache:",
                     "welcome": "Entdecken Sie die Welt mit uns",
-                    "hero-description": "Buchen Sie Flüge, Hotels oder Komplettpakete an einem Ort",
+                    "hero-description": "Buchen Sie Flüge, Hotels oder komplette Pakete an einem Ort",
                     "booking-type": "Buchungstyp:",
                     "flight": "Nur Flug",
                     "hotel": "Nur Hotel",
                     "flight-hotel": "Flug + Hotel",
-                    "destination": "Zielort:",
+                    "destination": "Ziel:",
                     "destination-placeholder": "Geben Sie das Ziel ein",
                     "check-in": "Check-in:",
                     "check-out": "Check-out:",
-                    "search": "Suche",
-                    "offers-title": "Hervorgehobene Angebote",
+                    "search": "Suchen",
+                    "offers-title": "Ausgewählte Angebote",
                     "japan-vacation": "Urlaub in Japan",
-                    "japan-description": "Genießen Sie einen Traumurlaub mit Unterkunft und Flug inklusive.",
+                    "japan-description": "Genießen Sie einen Traumurlaub mit Unterkunft und Flug.",
                     "european-capitals-tour": "Europäische Hauptstädte Tour",
-                    "european-capitals-description": "Besuchen Sie die bekanntesten Hauptstädte Europas mit Flügen und Hotels inklusive.",
+                    "european-capitals-description": "Besuchen Sie die ikonischsten Hauptstädte Europas mit Flügen und Hotels.",
                     "north-america-tour": "Nordamerika Tour - USA",
-                    "north-america-description": "Entdecken Sie den Charme der Alpen mit einem Komplettpaket.",
+                    "north-america-description": "Erleben Sie den Charme der Alpen mit einem Komplettpaket.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
                     "twitter": "Twitter",
@@ -310,10 +309,10 @@
                     "language": "Taal:",
                     "welcome": "Ontdek de wereld met ons",
                     "hero-description": "Boek vluchten, hotels of complete pakketten op één plek",
-                    "booking-type": "Boekingstype:",
-                    "flight": "Alleen Vliegtuig",
-                    "hotel": "Alleen Hotel",
-                    "flight-hotel": "Vliegtuig + Hotel",
+                    "booking-type": "Boekingsoptie:",
+                    "flight": "Alleen vlucht",
+                    "hotel": "Alleen hotel",
+                    "flight-hotel": "Vlucht + Hotel",
                     "destination": "Bestemming:",
                     "destination-placeholder": "Voer bestemming in",
                     "check-in": "Inchecken:",
@@ -325,7 +324,7 @@
                     "european-capitals-tour": "Europese Hoofdsteden Tour",
                     "european-capitals-description": "Bezoek de meest iconische hoofdsteden van Europa met vluchten en hotels inbegrepen.",
                     "north-america-tour": "Noord-Amerika Tour - VS",
-                    "north-america-description": "Ontdek de charme van de Alpen met een compleet pakket.",
+                    "north-america-description": "Ervaar de charme van de Alpen met een compleet pakket.",
                     "facebook": "Facebook",
                     "instagram": "Instagram",
                     "twitter": "Twitter",
@@ -333,19 +332,116 @@
                 }
             };
 
-            function updateContent(language) {
-                document.querySelectorAll('[data-translate]').forEach(function(element) {
-                    const key = element.getAttribute('data-translate');
-                    element.textContent = translations[language][key] || element.textContent;
-                });
+            const languageSelect = document.getElementById('language');
+            const elementsToTranslate = {
+                "home": document.querySelector('nav ul li a[href="#home"]'),
+                "bookings": document.querySelector('nav ul li a[href="#bookings"]'),
+                "offers": document.querySelector('nav ul li a[href="#offers"]'),
+                "contact": document.querySelector('nav ul li a[href="#contact"]'),
+                "language": document.querySelector('.language-selector label'),
+                "welcome": document.querySelector('.hero-text h2'),
+                "hero-description": document.querySelector('.hero-text p'),
+                "booking-type": document.querySelector('label[for="booking-type"]'),
+                "flight": document.querySelector('option[value="flight"]'),
+                "hotel": document.querySelector('option[value="hotel"]'),
+                "flight-hotel": document.querySelector('option[value="flight-hotel"]'),
+                "destination": document.querySelector('label[for="destination"]'),
+                "destination-placeholder": document.querySelector('#destination'),
+                "check-in": document.querySelector('label[for="check-in"]'),
+                "check-out": document.querySelector('label[for="check-out"]'),
+                "search": document.querySelector('button[type="submit"]'),
+                "offers-title": document.querySelector('.offers h2'),
+                "japan-vacation": document.querySelector('.offer:nth-child(1) h3'),
+                "japan-description": document.querySelector('.offer:nth-child(1) p'),
+                "european-capitals-tour": document.querySelector('.offer:nth-child(2) h3'),
+                "european-capitals-description": document.querySelector('.offer:nth-child(2) p'),
+                "north-america-tour": document.querySelector('.offer:nth-child(3) h3'),
+                "north-america-description": document.querySelector('.offer:nth-child(3) p'),
+                "facebook": document.querySelector('#facebook'),
+                "instagram": document.querySelector('#instagram'),
+                "twitter": document.querySelector('#twitter'),
+                "footer-rights": document.querySelector('footer p')
+            };
+
+            function translatePage(language) {
+                const translation = translations[language];
+                if (translation) {
+                    Object.keys(elementsToTranslate).forEach(key => {
+                        const element = elementsToTranslate[key];
+                        if (element) {
+                            if (element.tagName === 'INPUT' && key === 'destination-placeholder') {
+                                element.placeholder = translation[key];
+                            } else if (element.tagName === 'LABEL') {
+                                element.textContent = translation[key];
+                            } else if (element.tagName === 'BUTTON') {
+                                element.textContent = translation[key];
+                            } else if (element) {
+                                element.textContent = translation[key];
+                            }
+                        }
+                    });
+                }
             }
 
-            document.getElementById('language').addEventListener('change', function(event) {
-                updateContent(event.target.value);
+            languageSelect.addEventListener('change', function() {
+                translatePage(this.value);
             });
 
-            // Default language
-            updateContent('it');
+            translatePage('it'); // Default to Italian
+        });
+
+        function validateDates() {
+            const checkIn = document.getElementById('check-in');
+            const checkOut = document.getElementById('check-out');
+            const today = new Date().toISOString().split('T')[0];
+
+            checkIn.min = today;
+            checkOut.min = today;
+            checkIn.addEventListener('change', function() {
+                checkOut.min = checkIn.value;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', validateDates);
+
+        function convertPrices(currency) {
+            const exchangeRates = {
+                "en": {
+                    "USD": 1.07, // Example conversion rate from Euro to USD
+                    "GBP": 0.85  // Example conversion rate from Euro to GBP
+                },
+                "ko": {
+                    "KRW": 1420 // Example conversion rate from Euro to KRW
+                }
+            };
+
+            const prices = document.querySelectorAll('.price');
+            prices.forEach(price => {
+                const euroPrice = parseFloat(price.getAttribute('data-price'));
+                let convertedPrice = euroPrice;
+                const lang = document.getElementById('language').value;
+
+                if (lang in exchangeRates) {
+                    if (currency === 'USD') {
+                        convertedPrice = euroPrice * exchangeRates[lang].USD;
+                        price.textContent = `${convertedPrice.toFixed(2)} $`;
+                    } else if (currency === 'GBP') {
+                        convertedPrice = euroPrice * exchangeRates[lang].GBP;
+                        price.textContent = `${convertedPrice.toFixed(2)} £`;
+                    } else if (currency === 'KRW') {
+                        convertedPrice = euroPrice * exchangeRates[lang].KRW;
+                        price.textContent = `${convertedPrice.toFixed(0)} ₩`;
+                    }
+                } else {
+                    price.textContent = `${euroPrice.toFixed(2)} €`;
+                }
+            });
+        }
+
+        document.getElementById('language').addEventListener('change', function() {
+            const lang = this.value;
+            const currency = lang === 'ko' ? 'KRW' : (lang === 'en' ? (document.querySelector('input[name="currency"]').value || 'USD') : 'EUR');
+            convertPrices(currency);
         });
     </script>
 </body>
