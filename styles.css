@@ -29,8 +29,7 @@ nav ul li a {
 }
 
 .language-selector {
-    display: flex;
-    align-items: center;
+    position: relative;
 }
 
 .language-selector label {
@@ -45,13 +44,11 @@ nav ul li a {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KICA8cGF0aCBkPSJNMTAsMEwgMTAsMTAgTDAsMTAgTDAsMCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZS1jYXI9InJvdW5kIiBzdHJva2UtbGluZS1wYXR0ZXJuPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtY29sb3I9IiNGRkYiLz4KPC9zdmc+');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
 }
 
-.language-selector option {
-    font-size: 16px;
-}
-
-/* Hero section */
 .hero {
     background-image: url('https://static.turisanda.it/dam/turisanda.it/destinazioni/asia/corea/wide/corea_1900_720.jpg');
     background-size: cover;
