@@ -14,14 +14,14 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#bookings">Prenotazioni</a></li>
-                <li><a href="#offers">Offerte</a></li>
-                <li><a href="#contact">Contatti</a></li>
+                <li><a href="#home" class="nav-home">Home</a></li>
+                <li><a href="#bookings" class="nav-bookings">Prenotazioni</a></li>
+                <li><a href="#offers" class="nav-offers">Offerte</a></li>
+                <li><a href="#contact" class="nav-contact">Contatti</a></li>
             </ul>
         </nav>
         <div class="language-selector">
-            <label for="language">Lingua:</label>
+            <label for="language" class="lang-label">Lingua:</label>
             <select id="language" name="language">
                 <option value="it" data-flag="https://flagcdn.com/w20/it.png">Italiano</option>
                 <option value="en" data-flag="https://flagcdn.com/w20/gb.png">English</option>
@@ -37,134 +37,312 @@
 
     <section id="home" class="hero">
         <div class="hero-text">
-            <h2>Scopri il Mondo con Noi</h2>
-            <p>Prenota voli, hotel o pacchetti completi in un unico posto</p>
+            <h2 class="hero-title">Scopri il Mondo con Noi</h2>
+            <p class="hero-description">Prenota voli, hotel o pacchetti completi in un unico posto</p>
         </div>
         <form id="search-form">
-            <label for="booking-type">Tipo di prenotazione:</label>
+            <label for="booking-type" class="form-label">Tipo di prenotazione:</label>
             <select id="booking-type" name="booking-type">
-                <option value="flight">Solo Volo</option>
-                <option value="hotel">Solo Hotel</option>
-                <option value="flight-hotel">Volo + Hotel</option>
+                <option value="flight" class="booking-flight">Solo Volo</option>
+                <option value="hotel" class="booking-hotel">Solo Hotel</option>
+                <option value="flight-hotel" class="booking-flight-hotel">Volo + Hotel</option>
             </select>
 
-            <label for="destination">Destinazione:</label>
-            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione">
+            <label for="destination" class="form-label">Destinazione:</label>
+            <input type="text" id="destination" name="destination" placeholder="Inserisci la destinazione" class="form-input">
 
-            <label for="check-in">Check-in:</label>
-            <input type="date" id="check-in" name="check-in">
+            <label for="check-in" class="form-label">Check-in:</label>
+            <input type="date" id="check-in" name="check-in" class="form-input">
 
-            <label for="check-out">Check-out:</label>
-            <input type="date" id="check-out" name="check-out">
+            <label for="check-out" class="form-label">Check-out:</label>
+            <input type="date" id="check-out" name="check-out" class="form-input">
 
-            <button type="submit" class="btn">Cerca</button>
+            <button type="submit" class="btn btn-search">Cerca</button>
         </form>
     </section>
 
     <section id="offers" class="offers">
-        <h2>Offerte in Evidenza</h2>
+        <h2 class="offers-title">Offerte in Evidenza</h2>
         <div class="offer-container">
             <div class="offer">
-                <img src="https://www.bgviaggi.com/images/Giappone_principal.jpg" alt="Offerta Vacanza al Mare">
-                <h3>Vacanza in Giappone</h3>
-                <p>Goditi una vacanza da sogno con alloggio e volo inclusi.</p>
-                <span>€3300</span>
+                <img src="https://www.bgviaggi.com/images/Giappone_principal.jpg" alt="Offerta Vacanza al Mare" class="offer-image">
+                <h3 class="offer-title">Vacanza in Giappone</h3>
+                <p class="offer-description">Goditi una vacanza da sogno con alloggio e volo inclusi.</p>
+                <span class="offer-price">€3300</span>
             </div>
             <div class="offer">
-                <img src="https://www.viaggiamo.it/wp-content/uploads/2019/08/capitali-europee-da-vedere-in-2-giorni.jpg.webp" alt="Tour delle Capitali Europee">
-                <h3>Tour Capitali Europee</h3>
-                <p>Visita le capitali più iconiche d'Europa con voli e hotel inclusi.</p>
-                <span>€1400</span>
+                <img src="https://www.viaggiamo.it/wp-content/uploads/2019/08/capitali-europee-da-vedere-in-2-giorni.jpg.webp" alt="Tour delle Capitali Europee" class="offer-image">
+                <h3 class="offer-title">Tour Capitali Europee</h3>
+                <p class="offer-description">Visita le capitali più iconiche d'Europa con voli e hotel inclusi.</p>
+                <span class="offer-price">€1400</span>
             </div>
             <div class="offer">
-                <img src="https://www.sposimagazine.it/wp-content/uploads/2024/03/viaggio-di-nozze-stati-uniti-new-york-cover.jpg" alt="Escursioni Montagna">
-                <h3>Tour nel nord America - Stati Uniti</h3>
-                <p>Scopri il fascino delle Alpi con un pacchetto completo.</p>
-                <span>€3000</span>
+                <img src="https://www.sposimagazine.it/wp-content/uploads/2024/03/viaggio-di-nozze-stati-uniti-new-york-cover.jpg" alt="Escursioni Montagna" class="offer-image">
+                <h3 class="offer-title">Tour nel nord America - Stati Uniti</h3>
+                <p class="offer-description">Scopri il fascino delle Alpi con un pacchetto completo.</p>
+                <span class="offer-price">€3000</span>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
+        <p class="footer-text">&copy; 2024 TravelNow. Tutti i diritti riservati.</p>
         <div class="social">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Twitter</a>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Ottenere gli input delle date
-            const checkInInput = document.getElementById('check-in');
-            const checkOutInput = document.getElementById('check-out');
-
-            // Imposta la data odierna come data minima per il check-in
-            const today = new Date().toISOString().split('T')[0];
-            checkInInput.setAttribute('min', today);
-
-            // Quando viene selezionata una data di check-in
-            checkInInput.addEventListener('change', function() {
-                const checkInDate = checkInInput.value;
-                
-                // Imposta la data di check-out minima uguale o successiva alla data di check-in
-                checkOutInput.setAttribute('min', checkInDate);
-            });
-
-            // Imposta la data minima del check-out uguale alla data di check-in all'avvio
-            checkInInput.addEventListener('change', function() {
-                if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
-                    checkOutInput.value = '';
-                }
-            });
-
-            // Gestione della selezione della lingua
             const translations = {
                 "it": {
-                    "welcome": "Scopri il Mondo con Noi",
-                    "search": "Cerca"
+                    "hero-title": "Scopri il Mondo con Noi",
+                    "hero-description": "Prenota voli, hotel o pacchetti completi in un unico posto",
+                    "booking-flight": "Solo Volo",
+                    "booking-hotel": "Solo Hotel",
+                    "booking-flight-hotel": "Volo + Hotel",
+                    "form-label-destination": "Destinazione:",
+                    "form-placeholder-destination": "Inserisci la destinazione",
+                    "form-label-check-in": "Check-in:",
+                    "form-label-check-out": "Check-out:",
+                    "btn-search": "Cerca",
+                    "offers-title": "Offerte in Evidenza",
+                    "offer-vacation-japan": "Vacanza in Giappone",
+                    "offer-description-japan": "Goditi una vacanza da sogno con alloggio e volo inclusi.",
+                    "offer-price-japan": "€3300",
+                    "offer-tour-capitals": "Tour Capitali Europee",
+                    "offer-description-capitals": "Visita le capitali più iconiche d'Europa con voli e hotel inclusi.",
+                    "offer-price-capitals": "€1400",
+                    "offer-tour-usa": "Tour nel nord America - Stati Uniti",
+                    "offer-description-usa": "Scopri il fascino delle Alpi con un pacchetto completo.",
+                    "offer-price-usa": "€3000",
+                    "footer-text": "&copy; 2024 TravelNow. Tutti i diritti riservati.",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 },
                 "en": {
-                    "welcome": "Discover the World with Us",
-                    "search": "Search"
+                    "hero-title": "Discover the World with Us",
+                    "hero-description": "Book flights, hotels, or complete packages in one place",
+                    "booking-flight": "Flight Only",
+                    "booking-hotel": "Hotel Only",
+                    "booking-flight-hotel": "Flight + Hotel",
+                    "form-label-destination": "Destination:",
+                    "form-placeholder-destination": "Enter destination",
+                    "form-label-check-in": "Check-in:",
+                    "form-label-check-out": "Check-out:",
+                    "btn-search": "Search",
+                    "offers-title": "Featured Offers",
+                    "offer-vacation-japan": "Vacation in Japan",
+                    "offer-description-japan": "Enjoy a dream vacation with accommodation and flight included.",
+                    "offer-price-japan": "$3300",
+                    "offer-tour-capitals": "European Capitals Tour",
+                    "offer-description-capitals": "Visit the most iconic capitals of Europe with flights and hotels included.",
+                    "offer-price-capitals": "$1400",
+                    "offer-tour-usa": "North America Tour - USA",
+                    "offer-description-usa": "Discover the charm of the Alps with a complete package.",
+                    "offer-price-usa": "$3000",
+                    "footer-text": "&copy; 2024 TravelNow. All rights reserved.",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 },
                 "es": {
-                    "welcome": "Descubre el Mundo con Nosotros",
-                    "search": "Buscar"
+                    "hero-title": "Descubre el Mundo con Nosotros",
+                    "hero-description": "Reserva vuelos, hoteles o paquetes completos en un solo lugar",
+                    "booking-flight": "Solo Vuelo",
+                    "booking-hotel": "Solo Hotel",
+                    "booking-flight-hotel": "Vuelo + Hotel",
+                    "form-label-destination": "Destino:",
+                    "form-placeholder-destination": "Introduce el destino",
+                    "form-label-check-in": "Check-in:",
+                    "form-label-check-out": "Check-out:",
+                    "btn-search": "Buscar",
+                    "offers-title": "Ofertas Destacadas",
+                    "offer-vacation-japan": "Vacaciones en Japón",
+                    "offer-description-japan": "Disfruta de unas vacaciones soñadas con alojamiento y vuelo incluidos.",
+                    "offer-price-japan": "€3300",
+                    "offer-tour-capitals": "Tour de las Capitales Europeas",
+                    "offer-description-capitals": "Visita las capitales más icónicas de Europa con vuelos y hoteles incluidos.",
+                    "offer-price-capitals": "€1400",
+                    "offer-tour-usa": "Tour por América del Norte - Estados Unidos",
+                    "offer-description-usa": "Descubre el encanto de los Alpes con un paquete completo.",
+                    "offer-price-usa": "€3000",
+                    "footer-text": "&copy; 2024 TravelNow. Todos los derechos reservados.",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 },
                 "ko": {
-                    "welcome": "우리와 함께 세계를 발견하세요",
-                    "search": "검색"
+                    "hero-title": "우리와 함께 세계를 발견하세요",
+                    "hero-description": "항공권, 호텔 또는 패키지를 한 곳에서 예약하세요",
+                    "booking-flight": "항공편만",
+                    "booking-hotel": "호텔만",
+                    "booking-flight-hotel": "항공편 + 호텔",
+                    "form-label-destination": "목적지:",
+                    "form-placeholder-destination": "목적지를 입력하세요",
+                    "form-label-check-in": "체크인:",
+                    "form-label-check-out": "체크아웃:",
+                    "btn-search": "검색",
+                    "offers-title": "추천 상품",
+                    "offer-vacation-japan": "일본 여행",
+                    "offer-description-japan": "숙소와 항공편이 포함된 꿈의 여행을 즐기세요.",
+                    "offer-price-japan": "₩3300",
+                    "offer-tour-capitals": "유럽 수도 투어",
+                    "offer-description-capitals": "유럽의 상징적인 수도를 항공편과 호텔 포함하여 방문하세요.",
+                    "offer-price-capitals": "₩1400",
+                    "offer-tour-usa": "북미 투어 - 미국",
+                    "offer-description-usa": "알프스의 매력을 완벽한 패키지로 발견하세요.",
+                    "offer-price-usa": "₩3000",
+                    "footer-text": "&copy; 2024 TravelNow. 모든 권리 보유.",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 },
                 "ja": {
-                    "welcome": "私たちと一緒に世界を発見してください",
-                    "search": "検索"
+                    "hero-title": "私たちと一緒に世界を発見してください",
+                    "hero-description": "フライト、ホテル、または完全なパッケージを1か所で予約",
+                    "booking-flight": "フライトのみ",
+                    "booking-hotel": "ホテルのみ",
+                    "booking-flight-hotel": "フライト + ホテル",
+                    "form-label-destination": "目的地:",
+                    "form-placeholder-destination": "目的地を入力",
+                    "form-label-check-in": "チェックイン:",
+                    "form-label-check-out": "チェックアウト:",
+                    "btn-search": "検索",
+                    "offers-title": "おすすめのオファー",
+                    "offer-vacation-japan": "日本のバケーション",
+                    "offer-description-japan": "宿泊とフライトが含まれた夢のバケーションをお楽しみください。",
+                    "offer-price-japan": "¥3300",
+                    "offer-tour-capitals": "ヨーロッパ首都ツアー",
+                    "offer-description-capitals": "フライトとホテルが含まれたヨーロッパの象徴的な首都を訪問してください。",
+                    "offer-price-capitals": "¥1400",
+                    "offer-tour-usa": "北米ツアー - アメリカ合衆国",
+                    "offer-description-usa": "アルプスの魅力を完全なパッケージで発見してください。",
+                    "offer-price-usa": "¥3000",
+                    "footer-text": "&copy; 2024 TravelNow. すべての権利を保留します。",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 },
                 "zh": {
-                    "welcome": "与我们一起发现世界",
-                    "search": "搜索"
+                    "hero-title": "与我们一起发现世界",
+                    "hero-description": "在一个地方预订航班、酒店或完整的套餐",
+                    "booking-flight": "仅航班",
+                    "booking-hotel": "仅酒店",
+                    "booking-flight-hotel": "航班 + 酒店",
+                    "form-label-destination": "目的地:",
+                    "form-placeholder-destination": "输入目的地",
+                    "form-label-check-in": "入住:",
+                    "form-label-check-out": "退房:",
+                    "btn-search": "搜索",
+                    "offers-title": "精选优惠",
+                    "offer-vacation-japan": "日本假期",
+                    "offer-description-japan": "享受包含住宿和航班的梦想假期。",
+                    "offer-price-japan": "¥3300",
+                    "offer-tour-capitals": "欧洲首都之旅",
+                    "offer-description-capitals": "访问欧洲最具代表性的首都，包含航班和酒店。",
+                    "offer-price-capitals": "¥1400",
+                    "offer-tour-usa": "北美之旅 - 美国",
+                    "offer-description-usa": "以完整套餐发现阿尔卑斯山的魅力。",
+                    "offer-price-usa": "¥3000",
+                    "footer-text": "&copy; 2024 TravelNow. 保留所有权利。",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 },
                 "de": {
-                    "welcome": "Entdecken Sie die Welt mit uns",
-                    "search": "Suche"
+                    "hero-title": "Entdecken Sie die Welt mit uns",
+                    "hero-description": "Buchen Sie Flüge, Hotels oder komplette Pakete an einem Ort",
+                    "booking-flight": "Nur Flug",
+                    "booking-hotel": "Nur Hotel",
+                    "booking-flight-hotel": "Flug + Hotel",
+                    "form-label-destination": "Ziel:",
+                    "form-placeholder-destination": "Ziel eingeben",
+                    "form-label-check-in": "Check-in:",
+                    "form-label-check-out": "Check-out:",
+                    "btn-search": "Suche",
+                    "offers-title": "Top Angebote",
+                    "offer-vacation-japan": "Urlaub in Japan",
+                    "offer-description-japan": "Genießen Sie einen Traumurlaub mit Unterkunft und Flug inklusive.",
+                    "offer-price-japan": "€3300",
+                    "offer-tour-capitals": "Europäische Hauptstädte Tour",
+                    "offer-description-capitals": "Besuchen Sie die bekanntesten Hauptstädte Europas mit Flügen und Hotels inklusive.",
+                    "offer-price-capitals": "€1400",
+                    "offer-tour-usa": "Nordamerika Tour - USA",
+                    "offer-description-usa": "Entdecken Sie den Charme der Alpen mit einem Komplettpaket.",
+                    "offer-price-usa": "€3000",
+                    "footer-text": "&copy; 2024 TravelNow. Alle Rechte vorbehalten.",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 },
                 "nl": {
-                    "welcome": "Ontdek de wereld met ons",
-                    "search": "Zoeken"
+                    "hero-title": "Ontdek de wereld met ons",
+                    "hero-description": "Boek vluchten, hotels of complete pakketten op één plek",
+                    "booking-flight": "Alleen Vliegtuig",
+                    "booking-hotel": "Alleen Hotel",
+                    "booking-flight-hotel": "Vlucht + Hotel",
+                    "form-label-destination": "Bestemming:",
+                    "form-placeholder-destination": "Voer bestemming in",
+                    "form-label-check-in": "Inchecken:",
+                    "form-label-check-out": "Uitchecken:",
+                    "btn-search": "Zoeken",
+                    "offers-title": "Aanbevolen Aanbiedingen",
+                    "offer-vacation-japan": "Vakantie in Japan",
+                    "offer-description-japan": "Geniet van een droomvakantie met accommodatie en vlucht inbegrepen.",
+                    "offer-price-japan": "€3300",
+                    "offer-tour-capitals": "Europese Hoofdsteden Tour",
+                    "offer-description-capitals": "Bezoek de meest iconische hoofdsteden van Europa met vluchten en hotels inbegrepen.",
+                    "offer-price-capitals": "€1400",
+                    "offer-tour-usa": "Noord-Amerika Tour - Verenigde Staten",
+                    "offer-description-usa": "Ontdek de charme van de Alpen met een compleet pakket.",
+                    "offer-price-usa": "€3000",
+                    "footer-text": "&copy; 2024 TravelNow. Alle rechten voorbehouden.",
+                    "social-facebook": "Facebook",
+                    "social-instagram": "Instagram",
+                    "social-twitter": "Twitter"
                 }
             };
 
-            function updateContent(language) {
-                document.querySelector('.hero-text h2').textContent = translations[language].welcome;
-                document.querySelector('button.btn').textContent = translations[language].search;
+            function translatePage(language) {
+                const strings = translations[language] || translations["it"];
+                document.querySelector('.hero-title').textContent = strings["hero-title"];
+                document.querySelector('.hero-description').textContent = strings["hero-description"];
+                document.querySelectorAll('#booking-type option').forEach(option => {
+                    option.textContent = strings[option.className];
+                });
+                document.querySelector('#destination').placeholder = strings["form-placeholder-destination"];
+                document.querySelector('.form-label[for="destination"]').textContent = strings["form-label-destination"];
+                document.querySelector('.form-label[for="check-in"]').textContent = strings["form-label-check-in"];
+                document.querySelector('.form-label[for="check-out"]').textContent = strings["form-label-check-out"];
+                document.querySelector('.btn-search').textContent = strings["btn-search"];
+                document.querySelector('.offers-title').textContent = strings["offers-title"];
+                document.querySelector('.offer:nth-of-type(1) .offer-title').textContent = strings["offer-vacation-japan"];
+                document.querySelector('.offer:nth-of-type(1) .offer-description').textContent = strings["offer-description-japan"];
+                document.querySelector('.offer:nth-of-type(1) .offer-price').textContent = strings["offer-price-japan"];
+                document.querySelector('.offer:nth-of-type(2) .offer-title').textContent = strings["offer-tour-capitals"];
+                document.querySelector('.offer:nth-of-type(2) .offer-description').textContent = strings["offer-description-capitals"];
+                document.querySelector('.offer:nth-of-type(2) .offer-price').textContent = strings["offer-price-capitals"];
+                document.querySelector('.offer:nth-of-type(3) .offer-title').textContent = strings["offer-tour-usa"];
+                document.querySelector('.offer:nth-of-type(3) .offer-description').textContent = strings["offer-description-usa"];
+                document.querySelector('.offer:nth-of-type(3) .offer-price').textContent = strings["offer-price-usa"];
+                document.querySelector('.footer-text').innerHTML = strings["footer-text"];
+                document.querySelectorAll('.social-link').forEach((link, index) => {
+                    link.textContent = strings[`social-${link.textContent.toLowerCase()}`] || link.textContent;
+                });
             }
 
-            document.getElementById('language').addEventListener('change', function() {
+            document.querySelector('#language').addEventListener('change', function() {
                 const selectedLanguage = this.value;
-                updateContent(selectedLanguage);
+                translatePage(selectedLanguage);
             });
+
+            // Set default language
+            translatePage('it');
         });
     </script>
 </body>
