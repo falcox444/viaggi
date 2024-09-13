@@ -80,5 +80,33 @@
             <a href="#">Twitter</a>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ottenere gli input delle date
+            const checkInInput = document.getElementById('check-in');
+            const checkOutInput = document.getElementById('check-out');
+
+            // Imposta la data odierna come data minima per il check-in
+            const today = new Date().toISOString().split('T')[0];
+            checkInInput.setAttribute('min', today);
+
+            // Quando viene selezionata una data di check-in
+            checkInInput.addEventListener('change', function() {
+                const checkInDate = checkInInput.value;
+                
+                // Imposta la data di check-out minima uguale o successiva alla data di check-in
+                checkOutInput.setAttribute('min', checkInDate);
+            });
+
+            // Imposta la data minima del check-out uguale alla data di check-in all'avvio
+            checkInInput.addEventListener('change', function() {
+                if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
+                    checkOutInput.value = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
